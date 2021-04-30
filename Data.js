@@ -55,4 +55,20 @@ export default Data = [
     synopsis: "Dans un monde magique au beau milieu du pays de Fiore, la jeune Lucy Heartfiria rejoint la Guilde Magique de Fairy Tail. L'attendent de nombreuses et palpitantes aventures aux côtés de Natsu Dragnir, Happy, Erza Scarlett et Grey Fullbuster.",
     genre: ["Action"]
     },
+    {
+    key: '7',
+    title: "Chikyu wo nomu",
+    img: 'https://www.manga-news.com/public/images/series/.avaler_01_m.jpg',
+    note: "9.16",
+    synopsis: "Sur son lit de mort, Zephils (qui maudit l'humanité) demande à ses 7 filles de réaliser ses dernières volontés : détruire l'argent, déstabiliser les lois et la morale et prendre sa revanche sur les hommes. Les orphelines exécutent son plan machiavélique : grâce à la diffusion du Dermoïd Z, peau synthétique pouvant imiter quiconque, chacun peut usurper l'identité d'autrui. C'est le début du chaos...",
+    genre: ["Fantastique"]
+    },
+    {
+        key: '8',
+        title: "Blue Exorcist",
+        img: 'https://www.manga-news.com/public/images/series/.Blue-Exorcist-1-kaze_m.jpg',
+        note: "9.16",
+        synopsis: "Adopté dès son plus jeune âge par un exorciste de renom, Rin apprend un jour qu'il est le fils du mal incarné, quand son véritable père, Satan lui-même, apparaît pour l'emmener dans son monde. Mais impossible pour le jeune homme...",
+        genre: ["Fantastique"]
+        },
 ]

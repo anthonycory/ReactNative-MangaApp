@@ -26,22 +26,21 @@ export default function Search() {
                 style={styles.background}
             >
                 <View style={styles.containerTextInput}>
-                    <TextInput style={styles.search} placeholder="Quel manga cherchez vous ?"></TextInput>
+                    <TextInput onChangeText={(value) => setResult(value.toLowerCase())} value={result} style={styles.search} placeholder="Quel manga cherchez vous ?"></TextInput>
                 </View>
 
-                <View style={{width: '100%', marginBottom: 0, flex: 1}}>
+                <View style={{width: w / 1.1, marginTop: 10, flex: 1}}>
                 <FlatList 
                 data={filterData}
                 numColumns={2}
                 keyExtractor={(item, index) => index.toString()}
                 showsVerticalScrollIndicator={false}
                 renderItem={({item}) => (
-                    <TouchableOpacity>
+                    <TouchableOpacity style={{justifyContent: 'space-between'}}>
                         <ImageBackground style={styles.categorieimg} imageStyle={{borderRadius: 10}} source={{uri : item.img}} >  
-                        <View style={{backgroundColor: colors.black, padding: 10, borderTopLeftRadius: 5, borderTopRightRadius: 5}}>
-                             <Text style={{textAlign: "center", color: "white"}}>{item.title}</Text>
-                        </View>              
+                                     
                         </ImageBackground>
+                        <Text style={{marginLeft: 7, marginTop: -5, marginBottom: 5, color: colors.white}}>{item.title.substr(0, 30)}</Text>
                     </TouchableOpacity>
                 )}
                 />
@@ -79,11 +78,11 @@ const styles = StyleSheet.create({
         marginLeft: 10
       },
       categorieimg : {
-        width: w / 2,
+        width: w / 1.1 / 2.1,
         height: h / 4,
         borderRadius: 10,
         resizeMode: 'cover',
-        marginLeft: 10,
+        marginRight: 10,
         marginBottom: 10,
         borderTopLeftRadius: 5, 
         borderTopRightRadius: 5

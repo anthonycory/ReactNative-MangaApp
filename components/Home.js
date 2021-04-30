@@ -15,7 +15,7 @@ export default function Home({navigation}) {
 
     const [Select, setSelect] = useState(0)
     const [categorie, setCategorie] = useState('Action')
-    const [liked, setLiked] = useState(["0"])
+    const [liked, setLiked] = useState([])
     const [deletelike, setDeletelike] = useState([])
 
     useEffect(()=> {
@@ -44,7 +44,8 @@ export default function Home({navigation}) {
             deletedArr.splice(id, 1)
             setLiked(deletedArr)
         }
-    
+
+        
         if (liked.length <= 0) {
             return (
                     <TouchableOpacity onPress={() => AddLike(item)}>      
@@ -71,6 +72,8 @@ export default function Home({navigation}) {
             .signOut()
             .then(() => console.log("user signed out"))
     }
+
+    // Logout()
     return (
         <View style={styles.container}>
             <LinearGradient

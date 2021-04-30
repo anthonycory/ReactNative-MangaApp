@@ -1,8 +1,7 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
 
-// import Details from '../Details'
-// import Login from '../Login'
+import Details from '../Details'
 import Tabnavigator from './Tabnavigator'
 
 const Stack = createStackNavigator();
@@ -15,7 +14,7 @@ export default function Stacknavigator() {
       headerShown: false
     }}>
     <Stack.Screen name="Tabnavigator" component={Tabnavigator} />
-    {/* <Stack.Screen name="Details" component={Details} /> */}
+    <Stack.Screen name="Details" component={Details} />
   </Stack.Navigator>
   )
 }
