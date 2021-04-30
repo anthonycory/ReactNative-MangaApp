@@ -1,13 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import fire from './components/firebase/Firebase'
+
+import Stacknavigator from './components/navigation/Stacknavigator'
+import Authnavigator from './components/navigation/Authnavigator'
 
 export default function App() {
+
+  const [isAuth, setIsAuth] = useState(false);
+
+  useEffect(() => {
+    fire.auth().onAuthStateChanged(user => {
+      if (user != null) {
+        console.log('User online');
+        setIsAuth(true)
+      }else {
+        setIsAuth(false)
+      }
+    });
+  }, [isAuth])
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+        {isAuth ? <Stacknavigator /> : <Authnavigator/> }
+     </NavigationContainer>
   );
 }
 
