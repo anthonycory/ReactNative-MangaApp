@@ -5,6 +5,7 @@ import { FontAwesome } from '@expo/vector-icons';
 //SCREEN
 import Home from '../Home'
 import Search from '../Search'
+import Favorie from "../Favorie"
 
 
 export default function Tabnavigator() {
@@ -25,11 +26,11 @@ export default function Tabnavigator() {
                 <FontAwesome name="search" size={20} color={(color)} />
             )
         }} />
-        {/* <Tab.Screen name="Favorie" component={Favorie} options={{
+        <Tab.Screen name="Favorie" component={Favorie} options={{
             tabBarIcon: ({color}) => (
                 <FontAwesome name="star" size={20} color={(color)} />
             )
-        }}/> */}
+        }}/>
     </Tab.Navigator>
     )
 }

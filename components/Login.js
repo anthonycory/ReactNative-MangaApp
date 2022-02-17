@@ -24,13 +24,8 @@ export default function Login({navigation}) {
     }
 
     return (
-        <ImageBackground source={{ uri : 'https://static.wikia.nocookie.net/drstone/images/c/cd/Dr_Stone_Anime.jpg/revision/latest?cb=20190822174535&path-prefix=fr'}} style={styles.imagepopulaire} >
-            <LinearGradient
-                colors={['#f97833ab', '#12a9ebd1']}
-                start={{ x: 0.4, y: 0.4 }}
-                end={{ x: 0, y: 0.3}}
-                style={styles.background}
-            >
+        <View style={styles.imagepopulaire} >
+            <View style={styles.background}>
                 <View style={{width: w / 1.1,flexDirection: "row"}}>
                     <Text style={styles.title}>Connexion</Text>
                 </View>
@@ -56,21 +51,21 @@ export default function Login({navigation}) {
                     <Text style={{color: "white", textTransform: "uppercase"}}>Se connecter</Text>
                 </TouchableOpacity>
                 <View style={{width: w / 1.1, height: 2, backgroundColor: "#3434346b", marginTop: 10}}></View>
-                <View style={{width: w / 1.1,flexDirection: "row"}}>
-                <Text style={{color: "white", marginTop: 20}}>Pas encore de compte ? </Text>
-                <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-                <Text style={{color: "#2b2b2b", marginTop: 20, fontWeight: "bold"}}>S'inscrire</Text>
+                <View style={{width: w / 1.1,flexDirection: "column"}}>
+                <Text style={{color: "white", marginTop: 20, fontSize: 20, textTransform: "uppercase", marginBottom: 20}}>Pas encore de compte ? </Text>
+                <TouchableOpacity style={{ backgroundColor: "#6f00f8", borderRadius: 5, borderWidth: 1, borderColor: "#6402dd"}} onPress={() => navigation.navigate('Register')}>
+                <Text style={{color: "white",textTransform: "uppercase", padding: 20, fontWeight: "bold"}}>S'inscrire</Text>
                 </TouchableOpacity>
                 </View>
-            </LinearGradient>
-        </ImageBackground>
+            </View>
+        </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#6851ff',
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -82,6 +77,7 @@ const styles = StyleSheet.create({
       },
       background: {
         position: 'absolute',
+        backgroundColor: "#6851ff",
         left: 0,
         right: 0,
         top: 0,
@@ -94,7 +90,9 @@ const styles = StyleSheet.create({
           fontWeight: "200",
           color: "white",
           marginTop: h / 5,
-          marginBottom: 10
+          marginBottom: 10,
+          textTransform: "uppercase",
+          fontWeight: "bold"
 
       },
       containerInput: {

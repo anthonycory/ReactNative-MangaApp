@@ -5,6 +5,7 @@ import fire from './components/firebase/Firebase'
 
 import Stacknavigator from './components/navigation/Stacknavigator'
 import Authnavigator from './components/navigation/Authnavigator'
+import { LikeConsumer } from './components/context/LikeContext';
 
 export default function App() {
 
@@ -22,9 +23,11 @@ export default function App() {
   }, [isAuth])
 
   return (
+    <LikeConsumer>
     <NavigationContainer>
         {isAuth ? <Stacknavigator /> : <Authnavigator/> }
      </NavigationContainer>
+     </LikeConsumer>
   );
 }
 
